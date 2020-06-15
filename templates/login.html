@@ -1,0 +1,36 @@
+<html>
+   {% load static %}
+
+<head>
+<h2 style="margin-left:250px">Login Here</h2>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+
+<body style="margin-left:300px">
+
+
+<form class="form-horizontal" id="login-form"  method="POST" align="center">
+	{% csrf_token %}
+
+    <div class="form-group">
+					<label class="control-label col-sm-2" for="your_username">Username: </label>
+					<div class="col-sm-4"><input class="form-control" id="your_username" placeholder="Enter Username"type="text" name="your_username"></div>
+
+				</div><br/>
+
+    <div class="form-group">
+					<label class="control-label col-sm-2" for="your_password">Password: </label>
+					<div class="col-sm-4"><input class="form-control" id="your_password" placeholder="Enter Password"type="password" name="your_password"></div>
+
+				</div><br/>
+    					<input style="margin-right:350px" class="btn btn-success" type="button" value="Login" onclick="login_save();">&nbsp;&nbsp;&nbsp;
+
+</form>
+{% block js_block %}
+<script src="{%static 'custom-js/userapp/login.js'%}" type="text/javascript"></script>
+{% endblock %}
+</body>
+
+</html>

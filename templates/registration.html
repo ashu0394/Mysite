@@ -1,0 +1,72 @@
+<html>
+   {% load static %}
+
+
+<head>
+	<h2 style="margin-left:250px">Create Your Account</h2>
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body style="margin-left:250px">
+	<div class="row" style="margin: 50px;">
+		<div class="col-md-12" align="center">
+			<form class="form-horizontal"  id="register-form" method="POST" >
+				{% csrf_token %}
+				<div class="form-group" id="yourname">
+					<label class="control-label col-sm-2" for="your_name">Fullname: </label>
+					<div class="col-sm-5"><input class="form-control" id="your_name" placeholder="Enter Name"type="text" name="your_name"></div>
+
+				</div>
+				<br/>
+				<div class="form-group" id="yourmobile">
+					<label class="control-label col-sm-2" for="your_mobile">Mobile: </label>
+					<div class="col-sm-5"><input class="form-control" id="your_mobile"  placeholder="Enter Mobile No."type="text" name="your_mobile" ></div>
+				</div>
+				<br/>
+				<div class="form-group" id="youremail">
+					<label class="control-label col-sm-2" for="your_email">Email: </label>
+					<div class="col-sm-5"><input class="form-control" id="your_email"  placeholder="Enter Email" type="text" name="your_email"></div>
+				</div>
+							<br/>
+
+				<div class="form-group">
+					<label class="control-label col-sm-2" for="your_des">Designation: </label>
+					<div class="col-sm-5"><input class="form-control" id="your_des"   placeholder="Enter Designation" type="text" name="your_des"></div>
+				</div>
+							<br/>
+
+				<label class="control-label col-sm-2" for="your_gender">Gender: </label>
+				<div class="control-label col-sm-2" >
+					{% comment %} <label  for="your_female">Female</label>{% endcomment %}
+					<input class="custom-radio" type="radio" id="your_female" name="your_gender" value="Female" checked>Female
+
+					{% comment %} <label for="your_male">Male</label> {% endcomment %}
+					<input class="custom-radio" type="radio" id="your_male" name="your_gender" value="Male">Male
+				</div>
+				<br/>
+							<br/>
+
+
+				<div class="form-group">
+					<label class="control-label col-sm-2" for="your_address">Address: </label>
+					<div class="col-sm-5"><textarea class="form-control" id="your_address"  placeholder="Enter Address" name="your_address"></textarea></div>
+				</div>
+				<br/>
+
+
+				<div class="control-label col-sm-5">
+					<input class="btn btn-success" type="button" value="Register" onclick="save_user();">&nbsp;&nbsp;&nbsp;
+					<a href="/myapp/login/" class="btn btn-primary">Login</a>
+				</div>
+			</form>
+
+		</div>
+	</div>
+{% block js_block %}
+<script src="{%static 'custom-js/userapp/register.js'%}" type="text/javascript"></script>
+{% endblock %}
+</body>
+</html>
+
